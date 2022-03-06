@@ -53,9 +53,11 @@ def audio_data_cb(audio_buffer: np.ndarray, frequency_bins: np.ndarray, frequenc
         
     # print("data length = ", data.shape)
     
-    #input here functions to manipulate, analyze and convert the data and it to the simulator    
+    #input here functions to manipulate, analyze and convert the data and it to the simulator
+    # select random = 0 for creating values based on frequency of the song
+    # select random = 1 for creating random values for visualization
     random = 0
-    sample_song(random=random, frequency=frequency, data=data)
+    data = sample_song(random=random, frequency=frequency, data=data)
     
     #data should be in the format [[RED,RED,RED...],[GREEN,GREEN...],[BLUE...]]
     send_data.send_data(data)
