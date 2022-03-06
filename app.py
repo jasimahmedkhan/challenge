@@ -28,7 +28,7 @@ def sample_song(random, frequency, data):
         data[1, indices[1, :]] = 255
         data[2, indices[2, :]] = 255
     else:
-        # Sampling based on intensity of frequencey values where, we select 300 values and later based on thresholding. 
+        # Sampling based on intensity of frequencey values where, we select 300 values and later normalize values based on thresholding. 
         values = np.random.choice(frequency, 300, replace=False)
         red = values[:100]
         green = values[100:200]
